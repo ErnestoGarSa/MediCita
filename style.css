@@ -1,390 +1,387 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f5f5f5;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* ==========================================================================
+   MEDICITA - SISTEMA DE ESTILOS GLOBALES
+   ========================================================================== */
+
+/* 1. Variables Globales y Paleta de Colores */
+:root {
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --bg-main: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --success-bg: #dcfce7;
+  --success-text: #15803d;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease-in-out;
 }
 
-/* rgb(26, 135, 44); */
-/* rgb(74, 152, 87); */
-nav {
-  padding: 0.5rem;
+/* 2. Reset y Tipografía */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* 3. Navegación (Header) */
+nav {
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
   align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navImage {
-  width: 150px;
-  height: 150px;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
   text-decoration: none;
-  color: black;
-  font-size: 2rem;
+  letter-spacing: -0.5px;
+  transition: var(--transition);
 }
 
-.recuperarContraseña {
-  text-decoration: none;
-  margin-bottom: 1rem;
+.navTitle:hover {
+  color: var(--primary-hover);
 }
 
-.recuperarContraseña:hover {
-  color: rgb(24, 24, 190);
-}
-
+/* 4. Layout Principal (Main) */
 main {
-  /* min-height: 80vh; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  padding-bottom: 2rem;
-}
-
-main h1 {
-  text-align: center;
-}
-
-main h2 {
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.mainImage {
-  width: 45rem;
-  height: auto;
-}
-
-.iniciarSesion {
-  width: 50%;
-  height: 3rem;
-  background-color: rgb(26, 131, 135);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(26, 131, 135);
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.iniciarSesion:hover {
-  background-color: rgb(67, 182, 186);
-}
-
-.crearCuenta {
-  width: 50%;
-  height: 3rem;
-  background-color: rgb(58, 29, 125);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(58, 29, 125);
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.crearCuenta:hover {
-  background-color: rgb(106, 78, 169);
-}
-
-.paciente {
-  width: 80%;
-  height: auto;
-  background-color: rgb(26, 33, 135);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(26, 33, 135);
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.paciente:hover {
-  background-color: rgb(67, 74, 176);
-}
-
-.doctor {
-  width: 80%;
-  height: auto;
-  background-color: rgb(26, 131, 135);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(26, 131, 135);
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.doctor:hover {
-  background-color: rgb(67, 182, 186);
-}
-
-form {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-form > label {
-  font-size: 1.5rem;
-}
-
-form > input {
-  height: 2rem;
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-}
-
-form > button {
-  background-color: green;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 2rem;
-  color: white;
-  border: 1px solid green;
-  border-radius: 0.5rem;
-}
-
-.btn {
-  text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
-  background-color: green;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 2.5rem;
-  color: white;
-  border: 1px solid green;
-  border-radius: 0.5rem;
-  text-align: center;
-  font-size: 1.3rem;
-  padding: 0.5rem;
-}
-
-.btn:hover {
-  background-color: #17f717;
-}
-
-.botonPaciente {
-  width: 80%;
-  height: auto;
-  background-color: rgb(26, 33, 135);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(26, 33, 135);
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-}
-
-.botonPaciente:hover {
-  background-color: rgb(67, 74, 176);
-}
-
-.botonDoctor {
-  width: 80%;
-  height: auto;
-  background-color: rgb(26, 131, 135);
-  border-radius: 0.5rem;
-  border: 1px solid rgb(26, 131, 135);
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.botonDoctor:hover {
-  background-color: rgb(67, 182, 186);
-}
-
-.agendar {
-  width: 80%;
-  height: auto;
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  background-color: rgb(58, 29, 125);
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.agendar:hover {
-  background-color: rgb(106, 78, 169);
-}
-
-.cerrarSesion {
-  width: 80%;
-  height: auto;
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  background-color: rgb(179, 8, 8);
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cerrarSesion:hover {
-  background-color: rgb(203, 20, 20);
-}
-
-.citas {
-  width: 80%;
-  height: auto;
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  background-color: rgb(26, 135, 44);
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  text-align: center;
-}
-
-img {
-  width: 700px;
-  height: 500px;
-}
-
-.cita {
-  width: 80%;
-  height: 6rem;
-  padding: 1rem;
-  border: 2px solid rgb(26, 135, 44);
-  border-radius: 5px;
-  display: flex;
-}
-
-.citaFecha {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 20%;
-  text-align: center;
-  border-right: 2px solid rgb(26, 135, 44);
-}
-
-.citaInformacion {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-right: 2px solid rgb(26, 135, 44);
-}
-
-.citaBoton {
-  width: 20%;
-  align-self: center;
-  text-align: center;
-}
-
-.citaInformacionDr {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.reagendar {
-  text-decoration: none;
-  background-color: goldenrod;
   width: 100%;
-  height: auto;
-  color: white;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
 }
 
-.reagendar:hover {
-  background-color: rgb(194, 170, 109);
-}
-
-.confirmacion {
-  width: 80%;
-  background-color: rgba(41, 182, 41, 0.359);
-  color: green;
-  font-size: 1rem;
-  padding: 0.5rem;
+/* Variantes para layouts específicos */
+.mainIndex,
+.mainPaciente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+}
+
+/* 5. Encabezados y Textos */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+h4 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* 6. Imágenes y Multimedia */
+.mainImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+audio {
+  width: 100%;
+  max-width: 400px;
+  margin: 1.5rem 0;
 }
 
 .videoContenedor {
+  position: relative;
   width: 100%;
-  max-width: 800px; /* Tamaño máximo deseado */
-  aspect-ratio: 16 / 9; /* Mantiene la proporción de pantalla ancha */
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
 }
 
 .videoContenedor iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-@media only screen and (max-width: 767px) {
-  /* Tu CSS para móviles aquí */
+/* 7. Formularios y Entradas */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: -0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background-color: var(--surface);
+  transition: var(--transition);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* 8. Botones y Enlaces de Acción */
+.btn,
+.agendar,
+.reagendar,
+.iniciarSesion,
+.crearCuenta,
+.cerrarSesion,
+.paciente,
+.doctor,
+.botonPaciente,
+.botonDoctor,
+.citas,
+.videoTutorial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Estilos Primarios (Botones de acción principal) */
+.btn,
+.agendar,
+.iniciarSesion,
+.paciente,
+.botonPaciente {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn:hover,
+.agendar:hover,
+.iniciarSesion:hover,
+.paciente:hover,
+.botonPaciente:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Estilos Secundarios / Verdes */
+.crearCuenta,
+.doctor,
+.botonDoctor,
+.citas {
+  background-color: var(--secondary);
+  color: #ffffff;
+}
+
+.crearCuenta:hover,
+.doctor:hover,
+.botonDoctor:hover,
+.citas:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Estilos Neutros / Borde */
+.reagendar,
+.videoTutorial {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.reagendar:hover,
+.videoTutorial:hover {
+  background-color: rgba(2, 132, 199, 0.08);
+}
+
+/* Botón de Peligro / Salir */
+.cerrarSesion {
+  background-color: transparent;
+  color: var(--danger);
+  border: 1.5px solid var(--danger);
+}
+
+.cerrarSesion:hover {
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.recuperarContraseña {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--primary);
+  text-decoration: none;
+  margin-top: 0.25rem;
+}
+
+.recuperarContraseña:hover {
+  text-decoration: underline;
+}
+
+/* 9. Tarjetas de Citas */
+.cita {
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.cita:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.citaFecha {
+  background-color: #f1f5f9;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  min-width: 100px;
+}
+
+.citaFecha h3 {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.citaFecha h4 {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.citaInformacion,
+.citaInformacionDr {
+  flex: 1;
+}
+
+.citaBoton {
+  min-width: 120px;
+}
+
+.citaBoton .reagendar {
+  margin-top: 0;
+}
+
+/* 10. Alertas y Mensajes de Confirmación */
+.confirmacion {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid #bbf7d0;
+}
+
+/* 11. Ajustes para Móviles */
+@media (max-width: 640px) {
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
   .cita {
-    width: 80%;
-    height: auto;
-    padding: 1rem;
-    border: 2px solid rgb(26, 135, 44);
-    border-radius: 5px;
-    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: flex-start;
   }
 
   .citaFecha {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     width: 100%;
-    border-right: none;
-    border-bottom: 2px solid rgb(26, 135, 44);
   }
 
-  .citaInformacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .citaBoton {
     width: 100%;
-    border-right: none;
-    border-bottom: 2px solid rgb(26, 135, 44);
   }
 }
